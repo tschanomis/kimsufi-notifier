@@ -2,10 +2,8 @@
 
 import { useState } from "react";
 import useWebSocket from "react-use-websocket";
-
 import ServersTable from "./components/serversTableComponent/ServersTableComponent";
 import HeaderComponent from "./components/headerComponent/HeaderComponent";
-
 import { Server, ErrorNull } from "./components/types";
 
 export default function Home() {

@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegram } from "@fortawesome/free-brands-svg-icons";
-
 import Status from "../statusComponent/StatusComponent";
-
 import { StatusProps } from "../statusComponent/type";
 
 export default function HeaderComponent({
@@ -13,7 +11,7 @@ export default function HeaderComponent({
   lastMessage,
 }: StatusProps) {
   return (
-    <div className="HeaderComponent flex justify-evenly w-full">
+    <div className="flex justify-evenly w-full">
       <div className="flex flex-col justify-center">
         <div>Receive notifications on Telegram</div>
         <a className="flex text-blue-400 space-x-1" href="https://t.me/KimsufiNotifierBot">

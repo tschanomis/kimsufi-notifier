@@ -32,14 +32,22 @@ const ServersTable = ({ data }: Props) => {
     uncategorized: [],
   };
 
+  //checking uncategorized servers
+  const checkedUncategorized = data.map((server) =>
+    !server.category ? { ...server, category: "uncategorized" } : server
+  );
+
   // Group servers by category
-  const serversByCategory = Object.groupBy(data, (server: Server) => server.category);
+  const serversByCategory = Object.groupBy(
+    checkedUncategorized,
+    (server: Server) => server.category
+  );
 
   // Merge the server and respect the categories order
   const ordered: CategoryOrder = { ...categoryOrder, ...serversByCategory };
 
   return (
-    <table className="text-nowrap border-separate border-spacing-x-0 border-spacing-y-4">
+    <table className="text-nowrap border-separate border-spacing-x-0 border-spacing-y-2">
       <thead>
         <tr>
           {columnsHead.map((columnHead) => (
